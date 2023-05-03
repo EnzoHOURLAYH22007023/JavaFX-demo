@@ -7,8 +7,10 @@ import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class Exercice2 extends Application {
 
@@ -18,8 +20,8 @@ public class Exercice2 extends Application {
         // Création du conteneur principal
         GridPane root = new GridPane();
 
-        // Création du conteneur correspondant a la barre de Menu
 
+        // Création du conteneur correspondant a la barre de Menu
 
 
         // Ajout du conteneur à la scene
@@ -27,8 +29,10 @@ public class Exercice2 extends Application {
 
         // Ajout de la scene à la fenêtre et changement de ses paramètres (dimensions et titre)
         primaryStage.setScene( scene );
-        primaryStage.setWidth( 300 );
-        primaryStage.setHeight( 300 );
+        primaryStage.initStyle(StageStyle.UTILITY);
+        primaryStage.setResizable(false);
+        //primaryStage.setWidth( 300 );
+        //primaryStage.setHeight( 300 );
         primaryStage.setTitle("Tic Tac Toe");
 
         // Affichage de la fenêtre
