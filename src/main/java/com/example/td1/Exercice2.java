@@ -44,14 +44,18 @@ public class Exercice2 extends Application {
         GridPane.setConstraints(case8, 1, 2);
         Label case9= new Label();
         GridPane.setConstraints(case9, 2, 2);
-        // Création des image
-        ImageView imageCroix = new ImageView("exercice2/Croix.png");
-        ImageView imageRond = new ImageView("exercice2/Rond.png");
-        ImageView imageVide = new ImageView("exercice2/Vide.png");
 
-        // Attribution aléatoire des cases
-        Random random = new Random();
-        int nombre = random.nextInt(3);
+        chargeImage(case1);
+        chargeImage(case2);
+        chargeImage(case3);
+        chargeImage(case4);
+        chargeImage(case5);
+        chargeImage(case6);
+        chargeImage(case7);
+        chargeImage(case8);
+        chargeImage(case9);
+
+        root.getChildren().addAll(case1,case2,case3,case4,case5,case6,case7,case8,case9);
 
         // Ajout du conteneur à la scene
         Scene scene = new Scene(root);
@@ -64,6 +68,23 @@ public class Exercice2 extends Application {
 
         // Affichage de la fenêtre
         primaryStage.show();
+    }
+
+    public void chargeImage(Label label){
+        // Création des image
+        ImageView imageCroix = new ImageView("src/exercice2/Croix.png");
+        ImageView imageRond = new ImageView("src/exercice2/Rond.png");
+        ImageView imageVide = new ImageView("src/exercice2/Vide.png");
+        // Attribution aléatoire des cases
+        Random random = new Random();
+        int nombre = random.nextInt(3);
+        if(nombre == 0){
+            label.setGraphic(imageCroix);
+        } else if (nombre == 1){
+            label.setGraphic(imageRond);
+        } else {
+            label.setGraphic(imageVide);
+        }
     }
 
     public static void main(String[] args) {
