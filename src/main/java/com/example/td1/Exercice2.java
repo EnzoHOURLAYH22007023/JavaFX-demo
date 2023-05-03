@@ -7,6 +7,7 @@ import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
@@ -72,9 +73,15 @@ public class Exercice2 extends Application {
 
     public void chargeImage(Label label){
         // Création des image
-        ImageView imageCroix = new ImageView("src/exercice2/Croix.png");
-        ImageView imageRond = new ImageView("src/exercice2/Rond.png");
-        ImageView imageVide = new ImageView("src/exercice2/Vide.png");
+        Image image1 = new Image("exercice2/Croix.png");
+        ImageView imageCroix = new ImageView();
+        imageCroix.setImage(image1);
+        Image image2 = new Image("exercice2/Rond.png");
+        ImageView imageRond = new ImageView();
+        imageRond.setImage(image2);
+        Image image3 = new Image("exercice2/Vide.png");
+        ImageView imageVide = new ImageView();
+        imageVide.setImage(image3);
         // Attribution aléatoire des cases
         Random random = new Random();
         int nombre = random.nextInt(3);
