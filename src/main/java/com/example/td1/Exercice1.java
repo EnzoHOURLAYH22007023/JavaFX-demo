@@ -29,17 +29,17 @@ public class Exercice1 extends Application {
         MenuItem menuItemSave = new MenuItem("Save");
         MenuItem menuItemClose = new MenuItem("Close");
         menu1.getItems().addAll(menuItemNew,menuItemOpen,menuItemSave,menuItemClose);
-
         // Création du Menu Options
         Menu menu2 = new Menu("Options");
         MenuItem menuItemCut = new MenuItem("Cut");
         MenuItem menuItemCopy = new MenuItem("Copy");
         MenuItem menuItemPaste = new MenuItem("Paste");
         menu2.getItems().addAll(menuItemCut,menuItemCopy,menuItemPaste);
-
         //Création du Menu Help
         Menu menu3 = new Menu("Help");
+        // Création de la barre de Menu
         MenuBar menuBar = new MenuBar(menu1,menu2,menu3);
+        menuBar.setMaxWidth(topControls.getMaxWidth());
 
         topControls.getChildren().add(menuBar);
         root.setTop(topControls);
@@ -72,21 +72,29 @@ public class Exercice1 extends Application {
         GridPane.setConstraints(nameLabel, 0, 0);
         var nameField = new TextField();
         GridPane.setConstraints(nameField, 1, 0);
+        GridPane.setMargin(nameLabel,new Insets(10));
+        GridPane.setMargin(nameField,new Insets(10));
 
         Label emailLabel = new Label("Email:");
         GridPane.setConstraints(emailLabel, 0, 1);
         var emailField = new TextField();
         GridPane.setConstraints(emailField, 1, 1);
+        GridPane.setMargin(emailLabel,new Insets(10));
+        GridPane.setMargin(emailField,new Insets(10));
 
         Label passwordLabel = new Label("Password:");
         GridPane.setConstraints(passwordLabel, 0, 2);
         var passwordField = new TextField();
         GridPane.setConstraints(passwordField, 1, 2);
+        GridPane.setMargin(passwordLabel,new Insets(10));
+        GridPane.setMargin(passwordField,new Insets(10));
 
         Button btnSubmit = new Button("Submit");
         GridPane.setConstraints(btnSubmit, 0, 3);
         Button btnCancel = new Button("Cancel");
         GridPane.setConstraints(btnCancel, 1, 3);
+        GridPane.setMargin(btnSubmit,new Insets(5,5,5,20));
+        GridPane.setMargin(btnCancel,new Insets(5,20,5,5));
 
         centerControls.getChildren().addAll(
                 nameLabel,nameField,
